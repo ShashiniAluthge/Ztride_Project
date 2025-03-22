@@ -5,6 +5,7 @@ import ArrowIcon from '../assets/arrowIcon.png';
 import PlusIcon from '../assets/plusIcon.png';
 import LatestOrganizationsList from "../components/dashboard/LatestOrganizationsList";
 import NotificationCard from "../components/dashboard/NotificationCard";
+import ChallengesCard from "../components/dashboard/ChallengesCard";
 
 const Dashboard = () => {
   return (
@@ -44,6 +45,9 @@ const Dashboard = () => {
           <div className="flex flex-row gap-[22px]">
           <LatestOrganizationsList/>
           <NotificationCard/>
+          </div>
+          <div>
+            <ChallengesCard/>
           </div>
          
 
