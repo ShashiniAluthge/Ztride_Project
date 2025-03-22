@@ -53,7 +53,7 @@ const tableDetails = [
 
 const LatestOrganizationsList = () => {
   return (
-    <div className="mt-[27px]  border-1 border-[#F9F8F8] rounded-[20px] w-[672px]">
+    <div className="mt-[27px]  border-1 border-[#F9F8F8] rounded-[20px] w-2/3">
       <div className="ml-[24px] m-[8px]">
         <div className="flex flex-row items-center justify-between">
           <div>
