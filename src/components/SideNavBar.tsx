@@ -1,6 +1,10 @@
+import LogoImage from '../assets/logo.png';
+
 const SideNavBar = () => {
   return (
-    <div className="w-full h-full items-center justify-center text-[var(--primary)]">SideNavBar</div>
+    <div className="w-full h-full items-center justify-center text-[var(--primary)]">
+      <img src={LogoImage}/>
+        </div>
   );
 };
 
