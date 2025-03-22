@@ -6,10 +6,11 @@ import PlusIcon from '../assets/plusIcon.png';
 import LatestOrganizationsList from "../components/dashboard/LatestOrganizationsList";
 import NotificationCard from "../components/dashboard/NotificationCard";
 import ChallengesCard from "../components/dashboard/ChallengesCard";
+import DownloadsOverviewCard from "../components/dashboard/DownloadsOverviewCard";
 
 const Dashboard = () => {
   return (
-    <div className="flex h-screen w-full bg-[var(--background)]">
+    <div className="flex w-full bg-[var(--background)]">
       <div className="w-[235px]  h-full fixed top-0 left-0">
         <SideNavBar />
       </div>
@@ -46,8 +47,9 @@ const Dashboard = () => {
           <LatestOrganizationsList/>
           <NotificationCard/>
           </div>
-          <div>
+          <div className="flex flex-row gap-[22px]">
             <ChallengesCard/>
+            <DownloadsOverviewCard/>
           </div>
          
 
