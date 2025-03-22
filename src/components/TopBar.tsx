@@ -3,7 +3,7 @@ import NotificationIcon from "../assets/Bell_light.png";
 import SettingsIcon from "../assets/setting.png";
 import ProfileImage from "../assets/progileImage.png";
 
-const TopNavBar = () => {
+const TopBar = () => {
   return (
     <div className="flex items-center justify-between px-4 h-full text-[var(--primary)]">
       <div className="w-[469px] flex justify-between items-center border-1 border-[#ECECEC] rounded-[50px] pl-[19px] p-[3px]">
@@ -34,4 +34,4 @@ const TopNavBar = () => {
   );
 };
 
-export default TopNavBar;
+export default TopBar;
