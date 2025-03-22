@@ -5,7 +5,7 @@ import DashboardMapImage from '../../assets/dashboardMapImage.png';
 
 const ChallengesCard = () => {
   return (
-    <div className="mt-[17px]  border-1 border-[#F9F8F8] rounded-[20px] w-2/3 mb-[40px]">
+    <div className="mt-[17px]  border-1 border-[#F9F8F8] rounded-[20px] w-2/3 mb-[40px] ">
       <div className="ml-[24px] m-[8px]">
         <div className="flex flex-row items-center justify-between ">
           <p className="text-[16px] font-medium text-[var(--primary)]">
