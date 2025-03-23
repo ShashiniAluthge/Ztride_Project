@@ -12,7 +12,7 @@ const SideNavBar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full h-full items-center justify-center text-[var(--primary)]">
+    <div className="w-full h-full items-center justify-center text-[var(--primary)] bg-[var(--background)]">
       <div>
         <img src={LogoImage} />
       </div>
