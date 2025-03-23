@@ -1,12 +1,11 @@
 import SideNavBar from "../components/SideNavBar";
 import TopNavBar from "../components/TopBar";
-import PlusIcon from "../assets/plusIcon.png";
 import ExportCSV from "../components/challenges/ExportCSV";
 import SearchBar from "../components/challenges/SearchBar";
 import ChallengesTable from "../components/challenges/challengesTable";
 import BottomNavBoxes from "../components/challenges/BottomNavBoxes";
 
-const AllChallenges = () => {
+const OngoingChallenges = () => {
   return (
     <div className="flex w-full bg-[var(--screenbg)]">
       <div className="h-full fixed top-0 left-0">
@@ -18,14 +17,10 @@ const AllChallenges = () => {
         </div>
         <div>
           <p className="text-[24px] text-[var(--primary)] font-medium">
-            Challenges
+            Ongoing Challenges
           </p>
           <div className="flex flex-row justify between  mt-[8px]">
             <div className="flex flex-row gap-[8px] w-1/2">
-              <div className="bg-[var(--btnBackground)] h-[44px]  text-[16px] flex items-center justify-between  pl-[16px] p-[7px] rounded-[50px] gap-[8px] ">
-                <p>Start a New Challenge</p>
-                <img src={PlusIcon} />
-              </div>
               <ExportCSV />
             </div>
             <div className="flex justify-end w-full">
@@ -53,4 +48,4 @@ const AllChallenges = () => {
   );
 };
 
-export default AllChallenges;
+export default OngoingChallenges;
