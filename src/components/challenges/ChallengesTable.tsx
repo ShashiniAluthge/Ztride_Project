@@ -1,8 +1,24 @@
-import { allChallengesTableData } from "./AllChallengesTableData";
 import ImageIcon from "../../assets/Image.png";
 import moreIcon from "../../assets/More.png";
 
-const ChallengesTable = () => {
+interface ChallengesData {
+  image: string;
+  ChallengeName: string;
+  ChgID: string;
+  Participants: string;
+  Distance: string;
+  StepsTarget: string;
+  StartDate: string;
+  StartTime: string;
+  EndDate: string;
+  Status: string;
+}
+
+interface ChallengesTableProp {
+  tableDataList: ChallengesData[];
+  forcesStatus?:string;
+}
+const ChallengesTable = ({ tableDataList,forcesStatus }: ChallengesTableProp) => {
   return (
     <table className="w-full text-left shadow-sm my-[16px]">
       <thead>
@@ -23,7 +39,7 @@ const ChallengesTable = () => {
         </tr>
       </thead>
       <tbody>
-        {allChallengesTableData.map((tableData, index) => (
+        {tableDataList.map((tableData, index) => (
           <tr
             key={index}
             className={`border-[#F9F8F8] text-[var(--subText)] text-[12px] h-[30px]  items-center ${
@@ -43,15 +59,15 @@ const ChallengesTable = () => {
             <td className="py-2 px-3">{tableData.EndDate}</td>
             <td
               className={`py-2 px-3 ${
-                tableData.Status === "Active"
+               (forcesStatus || tableData.Status) === "Active"
                   ? "text-[var(--activeText)]"
                   : "text-[var(--inactiveText)]"
               }`}
             >
-              {tableData.Status}
+              {forcesStatus || tableData.Status}
             </td>
             <td className="py-2 px-3 cursor-pointer">
-              <img src={moreIcon}/>
+              <img src={moreIcon} />
             </td>
           </tr>
         ))}
