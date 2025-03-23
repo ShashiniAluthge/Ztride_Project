@@ -1,10 +1,11 @@
 import { useState } from "react";
 import downArrow from "../assets/downArrow.png";
+import { useNavigate } from "react-router-dom";
 
 interface DropdownItems {
   title: string;
   icon: string;
-  items: string[];
+  items: { name: string; path: string }[];
   selectedItem: string | null;
   setSelectedItem: (item: string) => void;
 }
@@ -17,6 +18,8 @@ const SidebarDropdown = ({
   setSelectedItem,
 }: DropdownItems) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const navigate = useNavigate();
+
   return (
     <>
       <div
@@ -46,15 +49,18 @@ const SidebarDropdown = ({
           {items.map((listItem, index) => (
             <li
               key={index}
-              onClick={() => setSelectedItem(listItem)}
+              onClick={() => {
+                setSelectedItem(listItem.name);
+                navigate(listItem.path);
+              }}
               className={`p-2 hover:text-[var(--primary)] hover:bg-[#FCFCFC] hover:border-1 hover:border-[#F0F0F0] rounded-[5px]
             ${
-              selectedItem == listItem
+              selectedItem == listItem.name
                 ? "bg-[#FCFCFC] border border-[#F0F0F0] text-[var(--primary)] bg-[#FCFCFC] border-1 border-[#F0F0F0] rounded-[5px]"
                 : ""
             }`}
             >
-              {listItem}
+              {listItem.name}
             </li>
           ))}
         </ul>

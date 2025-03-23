@@ -11,7 +11,7 @@ import DownloadsOverviewCard from "../components/dashboard/DownloadsOverviewCard
 const Dashboard = () => {
   return (
     <div className="flex w-full bg-[var(--background)]">
-      <div className="w-[235px]  h-full fixed top-0 left-0">
+      <div className="h-full fixed top-0 left-0">
         <SideNavBar />
       </div>
       <div className="flex flex-col flex-1 ml-[269px] mr-[32px]">
