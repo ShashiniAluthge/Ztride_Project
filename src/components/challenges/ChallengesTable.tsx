@@ -16,9 +16,12 @@ interface ChallengesData {
 
 interface ChallengesTableProp {
   tableDataList: ChallengesData[];
-  forcesStatus?:string;
+  forcesStatus?: string;
 }
-const ChallengesTable = ({ tableDataList,forcesStatus }: ChallengesTableProp) => {
+const ChallengesTable = ({
+  tableDataList,
+  forcesStatus,
+}: ChallengesTableProp) => {
   return (
     <table className="w-full text-left shadow-sm my-[16px]">
       <thead>
@@ -59,9 +62,11 @@ const ChallengesTable = ({ tableDataList,forcesStatus }: ChallengesTableProp) =>
             <td className="py-2 px-3">{tableData.EndDate}</td>
             <td
               className={`py-2 px-3 ${
-               (forcesStatus || tableData.Status) === "Active"
+                (forcesStatus || tableData.Status) === "Active"
                   ? "text-[var(--activeText)]"
-                  : "text-[var(--inactiveText)]"
+                  : (forcesStatus || tableData.Status) === "Inactive"
+                  ? "text-[var(--inactiveText)]"
+                  : "text-[#25A244]"
               }`}
             >
               {forcesStatus || tableData.Status}
