@@ -6,10 +6,10 @@ import ChallengesListLayout from "../components/challenges/ChallengesListLayout"
 const CompleteChallenges = () => {
   return (
     <>
-      <ChallengesListLayout listType="Ongoing Challenges">
+      <ChallengesListLayout listType="Complete Challenges">
         <ChallengesTable
           tableDataList={allChallengesTableData}
-          forcesStatus="Active"
+          forcesStatus="Completed"
         />
         <BottomNavBoxes />
       </ChallengesListLayout>
