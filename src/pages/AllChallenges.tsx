@@ -5,6 +5,7 @@ import ExportCSV from "../components/challenges/ExportCSV";
 import SearchBar from "../components/challenges/SearchBar";
 import ChallengesTable from "../components/challenges/challengesTable";
 import BottomNavBoxes from "../components/challenges/BottomNavBoxes";
+import { allChallengesTableData } from "../components/challenges/AllChallengesTableData";
 
 const AllChallenges = () => {
   return (
@@ -45,7 +46,7 @@ const AllChallenges = () => {
             </p>
           </div>
 
-          <ChallengesTable />
+          <ChallengesTable tableDataList={allChallengesTableData}/>
           <BottomNavBoxes />
         </div>
       </div>

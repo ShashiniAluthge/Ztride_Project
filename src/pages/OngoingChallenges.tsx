@@ -4,6 +4,7 @@ import ExportCSV from "../components/challenges/ExportCSV";
 import SearchBar from "../components/challenges/SearchBar";
 import ChallengesTable from "../components/challenges/challengesTable";
 import BottomNavBoxes from "../components/challenges/BottomNavBoxes";
+import { allChallengesTableData } from "../components/challenges/AllChallengesTableData";
 
 const OngoingChallenges = () => {
   return (
@@ -40,7 +41,7 @@ const OngoingChallenges = () => {
             </p>
           </div>
 
-          <ChallengesTable />
+          <ChallengesTable tableDataList={allChallengesTableData} forcesStatus="Active"/>
           <BottomNavBoxes />
         </div>
       </div>
