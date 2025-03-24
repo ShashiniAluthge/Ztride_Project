@@ -3,9 +3,9 @@ import TopNavBar from "../components/TopBar";
 import PlusIcon from "../assets/plusIcon.png";
 import ExportCSV from "../components/challenges/ExportCSV";
 import SearchBar from "../components/challenges/SearchBar";
-import ChallengesTable from "../components/challenges/challengesTable";
+import ChallengesTable from "../components/challenges/ChallengesTable";
 import BottomNavBoxes from "../components/challenges/BottomNavBoxes";
-import { allChallengesTableData } from "../components/challenges/AllChallengesTableData";
+import { allChallengesTableData } from "../components/challenges/allChallengesTableData";
 
 const AllChallenges = () => {
   return (
