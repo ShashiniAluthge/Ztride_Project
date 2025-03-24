@@ -24,11 +24,15 @@ const ChallengesTable = ({
   tableDataList,
   forcesStatus,
 }: ChallengesTableProp) => {
-  const [openDropdownIndex, setOpenDropdownIndex] = useState<number|null>(null);
+  const [openDropdownIndex, setOpenDropdownIndex] = useState<number | null>(
+    null
+  );
 
-  const onclickDropdownIcon=(index:number)=>{
-setOpenDropdownIndex(openDropdownIndex === index ? null:index)
-  }
+  const [selectIcon, setSelectIcon] = useState<boolean>(false);
+
+  const onclickDropdownIcon = (index: number) => {
+    setOpenDropdownIndex(openDropdownIndex === index ? null : index);
+  };
 
   return (
     <>
@@ -82,23 +86,22 @@ setOpenDropdownIndex(openDropdownIndex === index ? null:index)
               >
                 {forcesStatus || tableData.Status}
               </td>
-              <td className="py-2 px-3 cursor-pointer relative" onClick={() =>onclickDropdownIcon(index)}>
+              <td className="py-2 px-3 cursor-pointer relative">
                 <img
                   src={moreIcon}
-                  
+                  onClick={() => {onclickDropdownIcon(index)
+                    setSelectIcon(openDropdownIndex === index ?false :true)
+                  }}
+                  className={`cursor-pointer  py-2 px-3 rounded-full ${
+                    selectIcon && openDropdownIndex === index ? "bg-[rgba(48,115,241,0.1)]" : ""
+                  }`}
                 />
-                {openDropdownIndex === index && (
-                  
-                    <MoreIconDropdown />
-                  
-                )}
+                {openDropdownIndex === index && <MoreIconDropdown />}
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-
-     
     </>
   );
 };
