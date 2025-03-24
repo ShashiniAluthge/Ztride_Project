@@ -1,9 +1,14 @@
 import calenderIcon from '../../assets/calendar.png';
 import timeIcon from '../../assets/time.png';
+import { ChallengeDataProp } from './ChallengeDetails';
 
-const ScheduleDetails = () => {
+
+
+const ScheduleDetails = ({challengeData}:ChallengeDataProp) => {
   return (
-    <div>
+    <>
+    {challengeData.map((challengeItem,index)=>(
+      <div key={index}>
     <p className="text-[16px] text-[var(--primary)] font-medium">Duration & Schedule Details</p>
     <div className="flex flex-row mt-[8px] gap-[21px]">
         <div className="flex flex-col w-1/2 text-[12px] ">
@@ -12,7 +17,7 @@ const ScheduleDetails = () => {
             <div className="border-1 border-[#F9F8F8]  p-[8px]">
             <img src={calenderIcon}/>
             </div>
-            <p className="text-[#3D3A3A]">2023-06-15</p>
+            <p className="text-[#3D3A3A]">{challengeItem.StartDate}</p>
             </div>
         </div>
         <div className="flex flex-col w-1/2 text-[12px] ">
@@ -21,7 +26,7 @@ const ScheduleDetails = () => {
             <div className="border-1 border-[#F9F8F8]  p-[8px]">
             <img src={calenderIcon}/>
             </div>
-            <p className="text-[#3D3A3A]">2023-06-15</p>
+            <p className="text-[#3D3A3A]">{challengeItem.EndDate}</p>
             </div>
         </div>
       </div>
@@ -31,10 +36,13 @@ const ScheduleDetails = () => {
             <div className="border-1 border-[#F9F8F8]  p-[8px]">
             <img src={timeIcon}/>
             </div>
-            <p className="text-[#3D3A3A]">08:00am</p>
+            <p className="text-[#3D3A3A]">{challengeItem.StartTime}</p>
             </div>
         </div>
   </div>
+    ))}
+    
+  </>
   )
 }
 

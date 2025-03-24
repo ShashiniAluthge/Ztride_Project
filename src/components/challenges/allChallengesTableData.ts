@@ -14,7 +14,7 @@ import ac12 from "../../assets/ac12.png";
 export const allChallengesTableData = [
   {
     image: ac1,
-    ChallengeName: "Taj Samudra Colo...",
+    ChallengeName: "Taj Samudra Colombo Weekly Running",
     ChgID: "Ch-001",
     Participants: "150",
     Distance: "100 km",
