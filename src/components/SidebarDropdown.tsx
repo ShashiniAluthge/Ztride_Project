@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import downArrow from "../assets/downArrow.png";
 import { useNavigate } from "react-router-dom";
 
@@ -6,24 +6,32 @@ interface DropdownItems {
   title: string;
   icon: string;
   items: { name: string; path: string }[];
-  selectedItem: string | null;
-  setSelectedItem: (item: string) => void;
 }
 
-const SidebarDropdown = ({
-  title,
-  icon,
-  items,
-  selectedItem,
-  setSelectedItem,
-}: DropdownItems) => {
+const SidebarDropdown = ({ title, icon, items }: DropdownItems) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const navigate = useNavigate();
+
+  // Check if any item inside the dropdown is currently active
+  const isActive = items.some((item) => location.pathname === item.path);
+
+  const getFocusStyles = (path: string) => {
+    return location.pathname === path
+      ? "bg-[#FCFCFC] border-1 border-[#F0F0F0] text-[var(--primary)] rounded-[5px]"
+      : "";
+  };
+
+  // to Open the dropdown if an item inside isActive
+  useEffect(() => {
+    if (isActive) {
+      setIsOpen(true);
+    }
+  }, [isActive]);
 
   return (
     <>
       <div
-        className={`flex flex-row gap-[8px] text-[var(--primary)] font-medium text-[16px] items-center h-[34px]  rounded-[5px] px-[12px] py-[4px] cursor-pointer
+        className={`flex flex-row gap-[8px] text-[var(--primary)] font-medium text-[16px] items-center h-[34px]  rounded-[5px] px-[12px] py-[4px] cursor-pointer hover:bg-[#FCFCFC] hover:border-1 hover:border-[#F0F0F0]
          ${isOpen ? "bg-[#FCFCFC] border border-[#F0F0F0]" : ""}`}
       >
         <img src={icon} className="w-[16px] h-[16px]" />
@@ -50,15 +58,10 @@ const SidebarDropdown = ({
             <li
               key={index}
               onClick={() => {
-                setSelectedItem(listItem.name);
                 navigate(listItem.path);
               }}
               className={`p-2 hover:text-[var(--primary)] hover:bg-[#FCFCFC] hover:border-1 hover:border-[#F0F0F0] rounded-[5px]
-            ${
-              selectedItem == listItem.name
-                ? "bg-[#FCFCFC] border border-[#F0F0F0] text-[var(--primary)] bg-[#FCFCFC] border-1 border-[#F0F0F0] rounded-[5px]"
-                : ""
-            }`}
+            ${getFocusStyles(listItem.path)}`}
             >
               {listItem.name}
             </li>
