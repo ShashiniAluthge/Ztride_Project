@@ -2,6 +2,7 @@ import { useState } from "react";
 import ImageIcon from "../../assets/Image.png";
 import moreIcon from "../../assets/More.png";
 import MoreIconDropdown from "./MoreIconDropdown";
+import { useNavigate } from "react-router-dom";
 
 interface ChallengesData {
   image: string;
@@ -34,6 +35,8 @@ const ChallengesTable = ({
     setOpenDropdownIndex(openDropdownIndex === index ? null : index);
   };
 
+  const navigate = useNavigate();
+
   return (
     <>
       <table className="w-full text-left shadow-sm my-[16px]">
@@ -63,6 +66,11 @@ const ChallengesTable = ({
                   ? "bg-[var(--tablebg)]"
                   : "bg-[var(--background)]"
               }`}
+              // onClick={(e) => {
+              //   e.stopPropagation(); // Prevent clicking on the dropdown triggering navigation
+              //   navigate(`/editChallenges/${encodeURIComponent(tableData.ChallengeName)}`);
+              // }}
+              onClick={()=>navigate("/editChallenges")}
             >
               <td className="py-2 px-3 flex items-center justify-center">
                 <img src={tableData.image} />
