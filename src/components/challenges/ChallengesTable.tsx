@@ -89,14 +89,19 @@ const ChallengesTable = ({
               <td className="py-2 px-3 cursor-pointer relative">
                 <img
                   src={moreIcon}
-                  onClick={() => {onclickDropdownIcon(index)
-                    setSelectIcon(openDropdownIndex === index ?false :true)
+                  onClick={() => {
+                    onclickDropdownIcon(index);
+                    setSelectIcon(openDropdownIndex === index ? false : true);
                   }}
                   className={`cursor-pointer  py-2 px-3 rounded-full ${
-                    selectIcon && openDropdownIndex === index ? "bg-[rgba(48,115,241,0.1)]" : ""
+                    selectIcon && openDropdownIndex === index
+                      ? "bg-[rgba(48,115,241,0.1)]"
+                      : ""
                   }`}
                 />
-                {openDropdownIndex === index && <MoreIconDropdown />}
+                {openDropdownIndex === index && (
+                  <MoreIconDropdown status={forcesStatus || tableData.Status} />
+                )}
               </td>
             </tr>
           ))}
