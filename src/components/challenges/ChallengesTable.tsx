@@ -4,7 +4,7 @@ import moreIcon from "../../assets/More.png";
 import MoreIconDropdown from "./MoreIconDropdown";
 import { useNavigate } from "react-router-dom";
 
-interface ChallengesData {
+export interface ChallengesData {
   image: string;
   ChallengeName: string;
   ChgID: string;
@@ -61,16 +61,13 @@ const ChallengesTable = ({
           {tableDataList.map((tableData, index) => (
             <tr
               key={index}
-              className={`border-[#F9F8F8] text-[var(--subText)] text-[12px] h-[30px]  items-center ${
+              className={`border-[#F9F8F8] text-[var(--subText)] text-[12px] h-[30px]  items-center cursor-pointer ${
                 index % 2 == 0
                   ? "bg-[var(--tablebg)]"
                   : "bg-[var(--background)]"
               }`}
-              // onClick={(e) => {
-              //   e.stopPropagation(); // Prevent clicking on the dropdown triggering navigation
-              //   navigate(`/editChallenges/${encodeURIComponent(tableData.ChallengeName)}`);
-              // }}
-              onClick={()=>navigate("/editChallenges")}
+              onClick={() => navigate(`/editChallenges/:${encodeURIComponent(tableData.ChallengeName)}`)}
+
             >
               <td className="py-2 px-3 flex items-center justify-center">
                 <img src={tableData.image} />

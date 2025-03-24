@@ -5,10 +5,13 @@ import user2 from "../../assets/user2.png";
 import user3 from "../../assets/user3.png";
 import user4 from "../../assets/user4.png";
 import usersCountbg from "../../assets/usersCountbg.png";
+import { ChallengeDataProp } from "./ChallengeDetails";
 
-const OrganizationDetails = () => {
+const OrganizationDetails = ({challengeData}:ChallengeDataProp) => {
   return (
-    <div className="mt-[8px]">
+    <>
+    {challengeData.map((challengeItem,index)=>(
+      <div className="mt-[8px]" key={index}>
       <p className="text-[16px] text-[var(--primary)] font-medium">
         Organization Details
       </p>
@@ -18,7 +21,7 @@ const OrganizationDetails = () => {
           <div className="flex flex-row items-center justify-between mt-[8px]">
             <img src={TajSamudraLogo} />
             <p className="text-[var(--subText)] text-[12px]">
-              Taj Samudra Colombo
+              {challengeItem.ChallengeName}
             </p>
           </div>
 
@@ -41,7 +44,7 @@ const OrganizationDetails = () => {
               Maximum Participants
             </p>
             <div className="flex flex-row items-center justify-between mt-[8px] border-1 border-[#F9F8F8] p-[8px]">
-              <p>150</p>
+              <p>{challengeItem.Participants}</p>
               <img src={upDownArrow} />
             </div>
           </div>
@@ -72,7 +75,7 @@ const OrganizationDetails = () => {
             </div>
 
             <p className="text-[var(--subText)] text-[12px]">
-              150 Participants
+              {challengeItem.Participants} Participants
             </p>
           </div>
 
@@ -82,6 +85,9 @@ const OrganizationDetails = () => {
         </div>
       </div>
     </div>
+    ))}
+    
+    </>
   );
 };
 

@@ -17,7 +17,7 @@ const router = createBrowserRouter([
             {path:"ongoingChallenges",element:<OngoingChallenges/>},
             {path:"disableChallenges",element:<DisableChallenges/>},
             {path:"completeChallenges",element:<CompleteChallenges/>},
-            {path:"editChallenges",element:<EditChallengeDetails/>}
+            {path:"editChallenges/:Challengename",element:<EditChallengeDetails/>}
         ]
     }
 ])
