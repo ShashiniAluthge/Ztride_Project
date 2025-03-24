@@ -8,7 +8,7 @@ export interface ChallengesData {
   image: string;
   ChallengeName: string;
   ChgID: string;
-  Participants: string;
+  Participants: number;
   Distance: string;
   StepsTarget: string;
   StartDate: string;
@@ -66,8 +66,16 @@ const ChallengesTable = ({
                   ? "bg-[var(--tablebg)]"
                   : "bg-[var(--background)]"
               }`}
-              onClick={() => navigate(`/editChallenges/:${encodeURIComponent(tableData.ChallengeName)}`)}
-
+              onClick={() =>{
+                if(openDropdownIndex !== index) 
+                navigate(
+                  `/editChallenges/:${encodeURIComponent(
+                    tableData.ChallengeName
+                  )}`
+                )
+              }
+                
+              }
             >
               <td className="py-2 px-3 flex items-center justify-center">
                 <img src={tableData.image} />
@@ -94,7 +102,8 @@ const ChallengesTable = ({
               <td className="py-2 px-3 cursor-pointer relative">
                 <img
                   src={moreIcon}
-                  onClick={() => {
+                  onClick={(event) => {
+                    event.stopPropagation(); // to prevent whole row click instead of moreIcon
                     onclickDropdownIcon(index);
                     setSelectIcon(openDropdownIndex === index ? false : true);
                   }}
@@ -105,7 +114,10 @@ const ChallengesTable = ({
                   }`}
                 />
                 {openDropdownIndex === index && (
-                  <MoreIconDropdown status={forcesStatus || tableData.Status} />
+                  <MoreIconDropdown
+                    status={forcesStatus || tableData.Status}
+                    challengeName={tableData.ChallengeName}
+                  />
                 )}
               </td>
             </tr>

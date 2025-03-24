@@ -11,6 +11,7 @@ interface DropdownItems {
 const SidebarDropdown = ({ title, icon, items }: DropdownItems) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const navigate = useNavigate();
+  
 
   // Check if any item inside the dropdown is currently active
   const isActive = items.some((item) => location.pathname === item.path);

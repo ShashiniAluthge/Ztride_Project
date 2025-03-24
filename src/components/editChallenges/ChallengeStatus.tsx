@@ -1,4 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 const ChallengeStatus = () => {
+  const navigate = useNavigate();
+
+  const handleGoBack =()=>{
+    navigate(-1);
+    window.scrollTo(0,0)
+  }
+
   return (
     <div className="mt-[8px]">
       <p className="text-[16px] text-[var(--primary)] font-medium">
@@ -18,10 +27,18 @@ const ChallengeStatus = () => {
         </div>
         <div className="mt-[47px]">
           <div className="flex flex-row justify-end cursor-pointer">
-            <div className="text-[#747474] text-[14px] p-[8px] flex items-center justify-center h-[35px]">
+            <div
+              className="text-[#747474] text-[14px] p-[8px] flex items-center justify-center h-[35px]"
+              onClick={handleGoBack 
+                
+              }
+            >
               Cancel
             </div>
-            <div className="text-[var(--activeText)] text-[14px] p-[8px] flex items-center justify-center h-[35px] border-1 border-[#E5F6FF] bg-[#E5F6FF]">
+            <div
+              className="text-[var(--activeText)] text-[14px] p-[8px] flex items-center justify-center h-[35px] border-1 border-[#E5F6FF] bg-[#E5F6FF]"
+              onClick={handleGoBack}
+            >
               Save Changes
             </div>
           </div>

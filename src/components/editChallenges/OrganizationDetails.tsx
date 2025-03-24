@@ -21,7 +21,7 @@ const OrganizationDetails = ({challengeData}:ChallengeDataProp) => {
           <div className="flex flex-row items-center justify-between mt-[8px]">
             <img src={TajSamudraLogo} />
             <p className="text-[var(--subText)] text-[12px]">
-              {challengeItem.ChallengeName}
+            Taj Samudra Colombo
             </p>
           </div>
 
@@ -69,7 +69,7 @@ const OrganizationDetails = ({challengeData}:ChallengeDataProp) => {
               <div className="relative flex items-center justify-center w-[40px] h-[40px] -ml-5">
                 <img src={usersCountbg} className=" w-full h-full " />
                 <p className="absolute text-[12px] text-[var(--primary)] font-medium">
-                  +146
+                  +{challengeItem.Participants -4}
                 </p>
               </div>
             </div>
