@@ -4,6 +4,7 @@ import AllChallenges from "./pages/AllChallenges";
 import OngoingChallenges from "./pages/OngoingChallenges";
 import DisableChallenges from "./pages/DisableChallenges";
 import CompleteChallenges from "./pages/CompleteChallenges";
+import EditChallengeDetails from "./pages/EditChallengeDetails";
 
 
 const router = createBrowserRouter([
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
             {path:"allChallenges",element:<AllChallenges/>},
             {path:"ongoingChallenges",element:<OngoingChallenges/>},
             {path:"disableChallenges",element:<DisableChallenges/>},
-            {path:"completeChallenges",element:<CompleteChallenges/>}
+            {path:"completeChallenges",element:<CompleteChallenges/>},
+            {path:"editChallenges",element:<EditChallengeDetails/>}
         ]
     }
 ])
