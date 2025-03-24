@@ -66,16 +66,16 @@ const ChallengesTable = ({
                   ? "bg-[var(--tablebg)]"
                   : "bg-[var(--background)]"
               }`}
-              onClick={() =>{
-                if(openDropdownIndex !== index) 
-                navigate(
-                  `/editChallenges/:${encodeURIComponent(
-                    tableData.ChallengeName
-                  )}`
-                )
-              }
-                
-              }
+              onClick={() => {
+                if (openDropdownIndex !== index) {
+                  window.scrollTo(0, 0);
+                  navigate(
+                    `/editChallenges/:${encodeURIComponent(
+                      tableData.ChallengeName
+                    )}`
+                  );
+                }
+              }}
             >
               <td className="py-2 px-3 flex items-center justify-center">
                 <img src={tableData.image} />
