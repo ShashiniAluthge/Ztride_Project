@@ -10,7 +10,7 @@ import DownloadsOverviewCard from "../components/dashboard/DownloadsOverviewCard
 
 const Dashboard = () => {
   return (
-    <div className="flex w-full bg-[var(--screenbg)]">
+    <div className="flex w-full bg-[var(--screenbg)] ">
       <div className="h-full fixed top-0 left-0">
         <SideNavBar />
       </div>
