@@ -21,18 +21,19 @@ const AllChallenges = () => {
           <p className="text-[24px] text-[var(--primary)] font-medium">
             Challenges
           </p>
-          <div className="flex flex-row justify between  mt-[8px]">
-            <div className="flex flex-row gap-[8px] w-1/2">
-              <div className="bg-[var(--btnBackground)] h-[44px]  text-[16px] flex items-center justify-between  pl-[16px] p-[7px] rounded-[50px] gap-[8px] ">
+          <div className="flex  justify-between items-center mt-[8px]">
+            <div className="flex gap-[8px] w-full  items-center mb-4">
+              <div className="bg-[var(--btnBackground)] h-[44px] text-[16px] flex items-center justify-between pl-[16px] p-[7px] rounded-[50px] gap-[8px]">
                 <p>Start a New Challenge</p>
-                <img src={PlusIcon} />
+                <img src={PlusIcon} alt="Add New Challenge" />
               </div>
               <ExportCSV />
             </div>
-            <div className="flex justify-end w-full">
+            <div className="flex justify-end w-full ">
               <SearchBar />
             </div>
           </div>
+
           <div className="mt-[8px]">
             <p className="flex flex-row text-[12px]">
               Challenges:
@@ -46,7 +47,7 @@ const AllChallenges = () => {
             </p>
           </div>
 
-          <ChallengesTable tableDataList={allChallengesTableData}/>
+          <ChallengesTable tableDataList={allChallengesTableData} />
           <BottomNavBoxes />
         </div>
       </div>

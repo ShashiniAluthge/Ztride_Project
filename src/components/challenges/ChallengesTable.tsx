@@ -38,8 +38,8 @@ const ChallengesTable = ({
   const navigate = useNavigate();
 
   return (
-    <>
-      <table className="w-full text-left shadow-sm my-[16px]">
+    <div className="overflow-x-auto">
+      <table className="w-full text-left shadow-sm my-[16px] min-w-max">
         <thead>
           <tr className="bg-[var(--background)] text-[var(--primary)] h-[50px] text-[13px] items-center  border-[var(--background)] font-medium ">
             <th className="py-2 px-3 flex items-center justify-center">
@@ -124,7 +124,7 @@ const ChallengesTable = ({
           ))}
         </tbody>
       </table>
-    </>
+      </div>
   );
 };
 
